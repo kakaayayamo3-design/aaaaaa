@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProLink — Professional Network</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="authScreen" class="auth-shell">
+      <section class="auth-brand">
+        <div class="brand-mark">in</div>
+        <div class="brand-name">ProLink</div>
+        <h1>Make your next move<br /><span>with your network.</span></h1>
+        <p>
+          Connect with professionals, share ideas, and discover opportunities.
+        </p>
+        <div class="auth-art" aria-hidden="true">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="art-card card-one">
+            <span class="avatar av-blue">JM</span>
+            <div><b>Jordan Miller</b><small>Product Designer</small></div>
+            <span class="dot"></span>
+          </div>
+          <div class="art-card card-two">
+            <span class="avatar av-gold">AL</span>
+            <div><b>Alex Lee</b><small>Software Engineer</small></div>
+            <span class="dot"></span>
+          </div>
+          <div class="art-card card-three">
+            <span class="avatar av-purple">SK</span>
+            <div><b>Sam Kim</b><small>Marketing Lead</small></div>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <small class="brand-foot"
+          >A demo professional community · Front-end only</small
+        >
+      </section>
+      <section class="auth-panel">
+        <div class="auth-top">
+          <span>Already part of the community?</span
+          ><button class="text-btn" id="showLoginTop">Sign in</button>
+        </div>
+        <div class="auth-card">
+          <div class="mobile-brand">
+            <span class="brand-mark">in</span> ProLink
+          </div>
+          <h2 id="authTitle">Welcome back</h2>
+          <p id="authSubtitle" class="muted">
+            Sign in to continue to your professional network.
+          </p>
+          <form id="authForm">
+            <div id="nameField" class="field hidden">
+              <label for="fullName">Full name</label
+              ><input
+                id="fullName"
+                autocomplete="name"
+                placeholder="e.g. Jamie Cruz"
+              />
+            </div>
+            <div class="field">
+              <label for="email">Email</label
+              ><input
+                id="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="password">Password</label
+              ><input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="At least 6 characters"
+                required
+                minlength="6"
+              />
+            </div>
+            <p id="authError" class="error" role="alert"></p>
+            <button class="primary-btn full" type="submit" id="authSubmit">
+              Sign in
+            </button>
+          </form>
+          <div class="or"><span>or try the demo</span></div>
+          <button id="demoLogin" class="demo-btn full">
+            <span>✦</span> Continue with demo account
+          </button>
+          <div class="demo-info">
+            <b>Demo credentials</b><br />Email: <code>demo@prolink.test</code
+            ><br />Password: <code>demopass</code>
+          </div>
+          <p class="switch-copy" id="switchCopy">
+            New to ProLink?
+            <button class="text-btn" id="switchMode">Create an account</button>
+          </p>
+          <p class="legal">
+            By continuing, you agree to our
+            <a href="#" data-info="Terms of Service">Terms</a> and
+            <a href="#" data-info="Privacy Policy">Privacy Policy</a>.
+          </p>
+        </div>
+        <footer>© 2026 ProLink · Built as a local front-end demo</footer>
+      </section>
+    </div>
+
+    <div id="appScreen" class="app-shell hidden">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <button class="brand-home" id="homeBtn" aria-label="Go to feed">
+            <span class="brand-mark">in</span><span>ProLink</span>
+          </button>
+          <label class="searchbox"
+            ><span>⌕</span
+            ><input
+              id="globalSearch"
+              placeholder="Search people, posts, skills..."
+              aria-label="Search"
+          /></label>
+          <nav class="main-nav" aria-label="Main navigation">
+            <button class="nav-item active" data-view="feed">
+              <span>⌂</span><small>Home</small>
+            </button>
+            <button class="nav-item" data-view="network">
+              <span>♧</span><small>My Network</small
+              ><i id="networkBadge" class="nav-badge">3</i>
+            </button>
+            <button class="nav-item" data-view="jobs">
+              <span>▣</span><small>Jobs</small>
+            </button>
+            <button class="nav-item" data-view="messages">
+              <span>✉</span><small>Messaging</small>
+            </button>
+            <button class="nav-item" data-view="notifications">
+              <span>♧</span><small>Notifications</small
+              ><i id="notificationBadge" class="nav-badge">2</i>
+            </button>
+          </nav>
+          <button class="profile-menu" id="profileMenu">
+            <span id="topAvatar" class="avatar av-blue">DC</span
+            ><span class="profile-label">Me⌄</span>
+          </button>
+        </div>
+        <div id="profileDropdown" class="dropdown hidden">
+          <button data-action="profile">View profile</button
+          ><button data-action="settings">Settings</button
+          ><button data-action="logout">Sign out</button>
+        </div>
+      </header>
+
+      <main class="content-wrap">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">YOUR PROFESSIONAL SPACE</p>
+            <h1 id="pageTitle">Home</h1>
+          </div>
+          <button id="newPostTop" class="primary-btn">＋ Create a post</button>
+        </div>
+        <div class="layout-grid">
+          <aside class="left-column">
+            <section class="panel profile-card">
+              <div class="cover"></div>
+              <button class="avatar avatar-large av-blue" id="profileAvatar">
+                DC
+              </button>
+              <h3 id="profileName">Demo Creator</h3>
+              <p id="profileHeadline">Building things. Connecting people.</p>
+              <p class="muted location">⌖ Manila, Philippines</p>
+              <div class="stat-row">
+                <span>Profile viewers</span><b id="viewerCount">128</b>
+              </div>
+              <div class="stat-row">
+                <span>Post impressions</span><b id="impressions">842</b>
+              </div>
+              <button class="panel-link" data-action="profile">
+                View your profile →
+              </button>
+            </section>
+            <section class="panel quick-links">
+              <h3>Shortcuts</h3>
+              <button data-view="network">
+                ♧ <span>Grow your network</span>
+              </button>
+              <button data-view="jobs">▣ <span>Explore jobs</span></button>
+              <button data-view="saved">
+                ▤ <span>Saved posts</span><b id="savedCount">0</b>
+              </button>
+              <button data-view="events">
+                ✦ <span>Community events</span>
+              </button>
+            </section>
+            <section class="panel mini-panel">
+              <h3>ProLink tip</h3>
+              <p>
+                Share what you're learning. Small updates can start meaningful
+                professional conversations.
+              </p>
+              <button id="tipButton" class="panel-link">
+                Show another tip ↻
+              </button>
+            </section>
+          </aside>
+
+          <section class="center-column">
+            <div id="viewContent">
+              <section class="panel composer">
+                <div class="composer-row">
+                  <span id="composerAvatar" class="avatar av-blue">DC</span
+                  ><button id="composerOpen" class="composer-input">
+                    Start a post, share an idea...
+                  </button>
+                </div>
+                <div class="composer-actions">
+                  <button id="photoPost">▧ <span>Photo</span></button
+                  ><button id="writeArticle">
+                    ▤ <span>Write an article</span></button
+                  ><button id="pollPost">▥ <span>Create a poll</span></button>
+                </div>
+              </section>
+              <div class="feed-sort">
+                <span>Recommended for you</span><span class="sort-line"></span
+                ><button id="sortButton">Top ▾</button>
+              </div>
+              <div id="feedList"></div>
+            </div>
+          </section>
+
+          <aside class="right-column">
+            <section class="panel news-panel">
+              <div class="panel-title">
+                <h3>ProLink Briefing</h3>
+                <span class="info-dot" title="Demo news">i</span>
+              </div>
+              <p class="muted tiny">TODAY'S PROFESSIONAL HIGHLIGHTS</p>
+              <div id="newsList"></div>
+              <button id="refreshNews" class="panel-link">
+                Show more stories →
+              </button>
+            </section>
+            <section class="panel people-panel">
+              <div class="panel-title">
+                <h3>People you may know</h3>
+                <button class="dots" id="peopleRefresh">↻</button>
+              </div>
+              <div id="suggestions"></div>
+              <button class="panel-link" data-view="network">
+                See all suggestions →
+              </button>
+            </section>
+            <section class="footer-links">
+              <a href="#" data-info="About ProLink">About</a
+              ><a href="#" data-info="Help Center">Help</a
+              ><a href="#" data-info="Privacy & Terms">Privacy & Terms</a
+              ><span>ProLink © 2026</span>
+            </section>
+          </aside>
+        </div>
+      </main>
+      <div id="toast" class="toast" role="status"></div>
+      <dialog id="postDialog" class="modal">
+        <form id="postForm" method="dialog">
+          <div class="modal-head">
+            <h2 id="postModalTitle">Create a post</h2>
+            <button
+              type="button"
+              class="icon-btn"
+              id="closePost"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="modal-author">
+            <span id="modalAvatar" class="avatar av-blue">DC</span>
+            <div>
+              <b id="modalName">Demo Creator</b><small>Post to anyone</small>
+            </div>
+          </div>
+          <textarea
+            id="postText"
+            placeholder="What would you like to share?"
+            rows="5"
+          ></textarea>
+          <div id="pollFields" class="hidden">
+            <label>Poll question</label
+            ><input id="pollQuestion" placeholder="Ask your network" /><label
+              >Option 1</label
+            ><input id="pollOne" placeholder="First option" /><label
+              >Option 2</label
+            ><input id="pollTwo" placeholder="Second option" />
+          </div>
+          <div class="modal-foot">
+            <span class="muted tiny">Be kind. Be professional.</span
+            ><button type="submit" class="primary-btn">Post</button>
+          </div>
+        </form>
+      </dialog>
+      <dialog id="infoDialog" class="modal info-modal">
+        <div class="modal-head">
+          <h2 id="infoTitle">Information</h2>
+          <button id="closeInfo" class="icon-btn">✕</button>
+        </div>
+        <p id="infoBody"></p>
+        <button id="infoOk" class="primary-btn">Got it</button>
+      </dialog>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
